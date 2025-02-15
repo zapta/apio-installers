@@ -73,7 +73,6 @@ print(f"\nRenaming [{str(main)}] to [{str(package)}]")
 shutil.move(main, package)
 
 # -- Add the darwin activate file.
-
 resources = Path("resources")
 if apio_ctx.is_darwin:
     print(f"\nWriting darwin activate file.")
@@ -82,6 +81,10 @@ if apio_ctx.is_darwin:
 # -- Add readme file.
 print(f"\nWriting the README.txt file.")
 shutil.copyfile(resources / "README.txt", package / "README.txt")
+
+# -- Add LICENSE file.
+print(f"\nWriting the LICENSE file.")
+shutil.copyfile(resources / "LICENSE", package / "LICENSE")
 
 # -- Zip package
 print("\nCompressing the package.")

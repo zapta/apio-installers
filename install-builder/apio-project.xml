@@ -1,7 +1,7 @@
 <project>
     <shortName>apio</shortName>
     <fullName>Apio</fullName>
-    <licenseFile>../resources/LICENSE</licenseFile>
+    <licenseFile>_build/LICENSE</licenseFile>
     <createOsxBundleDmg>1</createOsxBundleDmg>
     <osxDmgTitle>Double click to install Apio</osxDmgTitle>
     <outputDirectory>_build</outputDirectory>
@@ -48,10 +48,10 @@
                     <platforms>linux-x64</platforms>
                     <distributionFileList>
                         <distributionDirectory>
-                            <origin>_build/apio-${PLATFORM}-${VER}/_internal</origin>
+                            <origin>_build/_internal</origin>
                         </distributionDirectory>
                         <distributionFile>
-                            <origin>_build/apio-${PLATFORM}-${VER}/apio</origin>
+                            <origin>_build/apio</origin>
                         </distributionFile>
                     </distributionFileList>
                     <actionList>
@@ -71,10 +71,10 @@
                     <platforms>windows-x64</platforms>
                     <distributionFileList>
                         <distributionDirectory>
-                            <origin>_build/apio-${PLATFORM}-${VER}/_internal</origin>
+                            <origin>_build/_internal</origin>
                         </distributionDirectory>
                         <distributionFile>
-                            <origin>_build/apio-${PLATFORM}-${VER}/apio.exe</origin>
+                            <origin>_build/apio.exe</origin>
                         </distributionFile>
                     </distributionFileList>
                  </folder>
@@ -85,10 +85,10 @@
                     <platforms>osx</platforms>
                     <distributionFileList>
                         <distributionDirectory>
-                            <origin>_build/apio-${PLATFORM}-${VER}/_internal</origin>
+                            <origin>_build/_internal</origin>
                         </distributionDirectory>
                         <distributionFile>
-                            <origin>_build/apio-${PLATFORM}-${VER}/apio</origin>
+                            <origin>_build/apio</origin>
                         </distributionFile>
                     </distributionFileList>
                 </folder>
