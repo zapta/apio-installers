@@ -12,6 +12,8 @@ Usage:
 
 from pathlib import Path
 import shutil
+import os
+import sys
 from subprocess import CompletedProcess, run
 from apio.apio_context import ApioContext, ApioContextScope
 from apio.utils import util
@@ -26,8 +28,9 @@ NAME = "apio-" + platform_id.replace("_", "-") + "-" + apio_version
 print(f"\nPackage name = [{NAME}]")
 
 
-dist = Path("_dist")
-work = Path("_work")
+dist:Path = Path("_dist")
+work:Path = Path("_work")
+package_file:Path = Path("packages") / (NAME + ".zip")
 
 # -- Clean old build dirs.
 for path in [dist, work]:
@@ -38,6 +41,12 @@ for path in [dist, work]:
         print(f"Dir [{path}] does not exist.")
     assert not path.exists(), path
 
+if package_file.exists():
+    print(f"Deleting {package_file}")
+    os.remove(package_file)
+
+# apio_dir = Path(sys.modules["apio"].__file__).parent
+# print(f"{apio_dir=}")
 
 # -- Run the pyinstaller
 cmd = [
@@ -77,4 +86,7 @@ shutil.copyfile(resources / "README.txt", package / "README.txt")
 # -- Zip package
 print("\nCompressing the package.")
 zip_fname = shutil.make_archive(package, "zip", package)
-print(f"\nCreated {zip_fname}.")
+
+# -- Copy to packages directory
+shutil.copy(zip_fname, package_file)
+print(f"\nCreated {package_file}.")
