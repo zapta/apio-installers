@@ -110,7 +110,7 @@
     <postInstallationActionList>
         <addDirectoryToPath>
             <insertAt>end</insertAt>
-            <path>$installDir$</path>
+            <path>${installdir}</path>
         </addDirectoryToPath>
     </postInstallationActionList>
     <enableRollback>1</enableRollback>
