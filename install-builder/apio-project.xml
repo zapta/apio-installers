@@ -46,7 +46,15 @@
                     <destination>${installdir}</destination>
                     <name>programfileslinux64</name>
                     <platforms>linux-x64</platforms>
-                </folder>
+                    <distributionFileList>
+                        <distributionDirectory>
+                            <origin>../pyinstaller/apio-${PLATFORM}-${VER}/_internal</origin>
+                        </distributionDirectory>
+                        <distributionFile>
+                            <origin>../pyinstaller/apio-${PLATFORM}-${VER}/apio</origin>
+                        </distributionFile>
+                    </distributionFileList>
+                 </folder>
                 <folder>
                     <description>Program Files</description>
                     <destination>${installdir}</destination>
@@ -58,7 +66,15 @@
                     <destination>${installdir}</destination>
                     <name>programfileswindows64</name>
                     <platforms>windows-x64</platforms>
-                </folder>
+                    <distributionFileList>
+                        <distributionDirectory>
+                            <origin>../pyinstaller/apio-${PLATFORM}-${VER}/_internal</origin>
+                        </distributionDirectory>
+                        <distributionFile>
+                            <origin>../pyinstaller/apio-${PLATFORM}-${VER}/apio.exe</origin>
+                        </distributionFile>
+                    </distributionFileList>
+                 </folder>
                 <folder>
                     <description>Program Files</description>
                     <destination>${installdir}</destination>
