@@ -1,7 +1,7 @@
 <project>
     <shortName>apio</shortName>
     <fullName>Apio</fullName>
-    <version>0.9.6</version>
+    <version>${VER}</version>
     <licenseFile>../resources/LICENSE</licenseFile>
     <createOsxBundleDmg>1</createOsxBundleDmg>
     <osxDmgTitle>Double click to install Apio</osxDmgTitle>
@@ -67,10 +67,10 @@
                     <platforms>osx</platforms>
                     <distributionFileList>
                         <distributionDirectory>
-                            <origin>../pyinstaller/apio-darwin-arm64/_internal</origin>
+                            <origin>../pyinstaller/apio-${PLATFORM}-${VER}/_internal</origin>
                         </distributionDirectory>
                         <distributionFile>
-                            <origin>../pyinstaller/apio-darwin-arm64/apio</origin>
+                            <origin>../pyinstaller/apio-${PLATFORM}-${VER}/apio</origin>
                         </distributionFile>
                     </distributionFileList>
                 </folder>
