@@ -54,6 +54,9 @@
                             <origin>../pyinstaller/apio-${PLATFORM}-${VER}/apio</origin>
                         </distributionFile>
                     </distributionFileList>
+                    <actionList>
+                        <changePermissions permissions="0755" files="${installdir}/apio"/>
+                    </actionList>
                  </folder>
                 <folder>
                     <description>Program Files</description>
