@@ -22,17 +22,25 @@ function build_platform() {
 }
 
 
-rm -rf output/*
+rm -rf packages
+rm -rf _build
+
+mkdir packages
+mkdir _build
+
+for f in ../pyinstaller/packages/apio-*${VER}*.zip; do
+    echo "Unzipping: $f"
+    dir_name=$(basename $f .zip)
+    unzip $f -d _build/$dir_name
+done
 
 build_platform "darwin-arm64" "osx"
 build_platform "windows-amd64" "windows-x64"
 build_platform "linux-x86-64" "linux-x64"
 
-
-rm -rf output/apio-*-osx-installer.app
-mv output/apio-${VER}-osx-installer.dmg output/apio-darwin-arm64-${VER}-installer.dmg
-mv output/apio-${VER}-windows-x64-installer.exe output/apio-windows-amd64-${VER}-installer.exe
-mv output/apio-${VER}-linux-x64-installer.run output/apio-linux-x86-64-${VER}-installer.run
+cp _build/apio-${VER}-osx-installer.dmg          packages/apio-darwin-arm64-${VER}-installer.dmg
+cp _build/apio-${VER}-windows-x64-installer.exe  packages/apio-windows-amd64-${VER}-installer.exe
+cp _build/apio-${VER}-linux-x64-installer.run    packages/apio-linux-x86-64-${VER}-installer.run
 
 echo
-ls -l output
+ls -l packages

@@ -4,7 +4,7 @@
     <licenseFile>../resources/LICENSE</licenseFile>
     <createOsxBundleDmg>1</createOsxBundleDmg>
     <osxDmgTitle>Double click to install Apio</osxDmgTitle>
-    <outputDirectory>output</outputDirectory>
+    <outputDirectory>_build</outputDirectory>
     <componentList>
         <component>
             <name>default</name>
@@ -48,10 +48,10 @@
                     <platforms>linux-x64</platforms>
                     <distributionFileList>
                         <distributionDirectory>
-                            <origin>../pyinstaller/apio-${PLATFORM}-${VER}/_internal</origin>
+                            <origin>_build/apio-${PLATFORM}-${VER}/_internal</origin>
                         </distributionDirectory>
                         <distributionFile>
-                            <origin>../pyinstaller/apio-${PLATFORM}-${VER}/apio</origin>
+                            <origin>_build/apio-${PLATFORM}-${VER}/apio</origin>
                         </distributionFile>
                     </distributionFileList>
                     <actionList>
@@ -71,10 +71,10 @@
                     <platforms>windows-x64</platforms>
                     <distributionFileList>
                         <distributionDirectory>
-                            <origin>../pyinstaller/apio-${PLATFORM}-${VER}/_internal</origin>
+                            <origin>_build/apio-${PLATFORM}-${VER}/_internal</origin>
                         </distributionDirectory>
                         <distributionFile>
-                            <origin>../pyinstaller/apio-${PLATFORM}-${VER}/apio.exe</origin>
+                            <origin>_build/apio-${PLATFORM}-${VER}/apio.exe</origin>
                         </distributionFile>
                     </distributionFileList>
                  </folder>
@@ -85,10 +85,10 @@
                     <platforms>osx</platforms>
                     <distributionFileList>
                         <distributionDirectory>
-                            <origin>../pyinstaller/apio-${PLATFORM}-${VER}/_internal</origin>
+                            <origin>_build/apio-${PLATFORM}-${VER}/_internal</origin>
                         </distributionDirectory>
                         <distributionFile>
-                            <origin>../pyinstaller/apio-${PLATFORM}-${VER}/apio</origin>
+                            <origin>_build/apio-${PLATFORM}-${VER}/apio</origin>
                         </distributionFile>
                     </distributionFileList>
                 </folder>
