@@ -1,16 +1,23 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 from PyInstaller.utils.hooks import collect_submodules
+import apio
+import sys
+from pathlib import Path
+
+# -- Get the path to the 'apio' dir of the apio package.
+apio_dir = Path(sys.modules["apio"].__file__).parent
+print(f"{apio_dir=}")
 
 added_files = [
-    ( '../apio/resources/*.jsonc', 'apio/resources' ),
-    ( '../apio/scons/SConstruct', 'apio/scons' ),
+    ( apio_dir / 'resources/*.jsonc', 'apio/resources' ),
+    ( apio_dir / 'scons/SConstruct', 'apio/scons' ),
 ]
 
 hiddenimports = collect_submodules('SCons')  + collect_submodules('apio')
 
 a = Analysis(
-    ['../apio/__main__.py'],
+    [apio_dir / '__main__.py'],
     pathex=[],
     binaries=[],
     datas=added_files,
