@@ -9,7 +9,8 @@ rm -rf output/apio-*${VER}-*.dmg
 builder="/Applications/InstallBuilder Professional 24.11.1/bin/builder"
 
 "$builder" build apio-project.xml osx \
-   --setvars PLATFORM="${PLATFORM}" VER="${VER}" 
+   --verbose \
+   --setvars project.version=${VER} VER=${VER} PLATFORM=${PLATFORM}
 
 rm -rf output/apio-*.app
 

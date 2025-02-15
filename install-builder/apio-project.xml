@@ -1,7 +1,6 @@
 <project>
     <shortName>apio</shortName>
     <fullName>Apio</fullName>
-    <version>${VER}</version>
     <licenseFile>../resources/LICENSE</licenseFile>
     <createOsxBundleDmg>1</createOsxBundleDmg>
     <osxDmgTitle>Double click to install Apio</osxDmgTitle>
