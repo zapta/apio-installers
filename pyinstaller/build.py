@@ -29,11 +29,11 @@ print(f"\nPackage name = [{NAME}]")
 
 
 dist:Path = Path("_dist")
-work:Path = Path("_work")
+build:Path = Path("_build")
 package_file:Path = Path("packages") / (NAME + ".zip")
 
 # -- Clean old build dirs.
-for path in [dist, work]:
+for path in [dist, build]:
     if path.is_dir():
         print(f"Deleting old dir [{path}].")
         shutil.rmtree(path)
@@ -54,7 +54,7 @@ cmd = [
     "--distpath",
     str(dist),
     "--workpath",
-    str(work),
+    str(build),
     "./apio.spec",
 ]
 print(f"\nRun: {cmd}")
@@ -62,11 +62,7 @@ result: CompletedProcess = run(cmd)
 assert result.returncode == 0, "Pyinstaller exited with an error code."
 print("Pyinstaller completed successfully")
 
-# -- Change to _dist directory
-# print("Changing cwd to _dist.")
-# os.chdir("_dist")
-
-# -- Rename the dist directory.
+# -- Rename the dist/main directory.
 main = dist / "main"
 package = dist / NAME
 print(f"\nRenaming [{str(main)}] to [{str(package)}]")
