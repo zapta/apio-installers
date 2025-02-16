@@ -1,4 +1,9 @@
-#!/bin/bash
+#!/bin/bash -x
+
+# Build velopak installers from the pyinstaller packages.
+#
+# Requiremnts
+#   * velopak 'vpk' command installed (via dotnet)
 
 # Exit on any error.
 set -e
