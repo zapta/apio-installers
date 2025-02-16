@@ -8,5 +8,5 @@
 
 cd pyinstaller
 
-python3 build-packge.py
+python3 build-package.py
 

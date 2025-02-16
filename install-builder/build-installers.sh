@@ -26,13 +26,13 @@ function build_platform() {
   rm -rf _build
   mkdir _build
 
-  unzip ../pyinstaller/packages/apio-${platform_id}-${VER}.zip -d _build
+  unzip ../pyinstaller/packages/pyinstaller-apio-${platform_id}-${VER}.zip -d _build
 
   "$builder" build apio-project.xml ${os} \
       --verbose \
       --setvars project.version=${VER} 
 
-  cp _build/apio-${VER}-${os}-installer.${ext} packages/apio-${platform_id}-${VER}-installer.${ext}
+  cp _build/apio-${VER}-${os}-installer.${ext} packages/installbuilder-apio-${platform_id}-${VER}-installer.${ext}
 
 }
 
