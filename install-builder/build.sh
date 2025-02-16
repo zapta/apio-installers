@@ -35,8 +35,8 @@ mkdir packages
 
 
 build_platform "darwin-arm64" "osx" "dmg"
-#build_platform "windows-amd64" "windows-x64" "exe"
-#build_platform "linux-x86-64" "linux-x64" "run"
+build_platform "windows-amd64" "windows-x64" "exe"
+build_platform "linux-x86-64" "linux-x64" "run"
 
 echo
 ls -l packages

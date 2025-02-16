@@ -1,5 +1,5 @@
 """A script to build the apio pyinstaller package for the current platform.
- 
+
 Prerequisites
 * Python is available.
 * This apio local repo is installed as the pip apio package.
