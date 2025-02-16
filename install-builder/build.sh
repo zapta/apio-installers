@@ -1,5 +1,5 @@
 #!/bin/bash -x
-     
+  
 VER="0.9.6"
 
 # Exit on any error.
