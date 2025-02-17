@@ -31,7 +31,7 @@ print(f"\nPackage name = [{NAME}]")
 
 dist:Path = Path("_dist")
 build:Path = Path("_build")
-package_file:Path = Path("packages") / ("pyinstaller-" + NAME + ".zip")
+package_file:Path = Path("packages") / ("pyinstaller-" + NAME + "-package.zip")
 
 if apio_ctx.is_darwin:
   OSX_BUNDLE_NAME = NAME + "-bundle"
