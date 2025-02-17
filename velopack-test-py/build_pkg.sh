@@ -29,6 +29,8 @@ pyinstaller --distpath _dist --workpath _work app_bundle.spec
 #  --app-drop-link 375 150 \
 #  "_release/my-app.dmg" "_dist/app.app/"
 
+exit 1
+
 rm -rf _dist/app.app
 #rm -rf _dist/app
 
