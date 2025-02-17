@@ -3,13 +3,12 @@
 # Exit on any error
 set -e
 
-rm -rf _dist
-mkdir _dist
+for d in dist work release; do
+  rm -rf _$d
+  mkdir _$d
+done
 
-rm -rf _work
-mkdir _work
-
-pyinstaller --distpath _dist --workpath _work app.spec
+pyinstaller --distpath _dist --workpath _work app_onefile.spec
 
 # Build the installer.
 vpk pack \
@@ -18,4 +17,4 @@ vpk pack \
   --outputDir _release \
   --packId app \
   --packVersion 0.0.1 \
-  --packDir _dist/main
+  --packDir _dist
