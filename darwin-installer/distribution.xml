@@ -19,7 +19,7 @@
     </choice>
 
     <pkg-ref id="io.github.fpgawars.apio.pkg" version="1.0">
-        MyAppComponent.pkg
+        apio-component.pkg
     </pkg-ref>
 
 

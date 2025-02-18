@@ -31,7 +31,7 @@ print(f"\nPackage name = [{NAME}]")
 
 dist:Path = Path("_dist")
 build:Path = Path("_build")
-package_file:Path = Path("packages") / ("pyinstaller-" + NAME + "-package.zip")
+package_file:Path = Path("release") / ("pyinstaller-" + NAME + "-package.zip")
 
 # -- Clean old build dirs.
 for path in [dist, build]:
