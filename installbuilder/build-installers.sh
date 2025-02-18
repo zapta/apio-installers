@@ -23,10 +23,16 @@ function build_platform() {
   echo
   sleep 1.0
 
-  rm -rf _build
+  rm -rf _package _build
+  mkdir _package
   mkdir _build
 
-  unzip ../pyinstaller/release/apio-${platform_id}-${VER}-pyinstaller-package.zip -d _build
+  
+
+  unzip ../pyinstaller/release/apio-${platform_id}-${VER}-pyinstaller-package.zip -d _package
+
+  rm -f _package/README.txt
+  rm -f package/activate
 
   "$builder" build apio-project.xml ${os} \
       --verbose \
@@ -36,8 +42,8 @@ function build_platform() {
 
 }
 
-rm -rf packages
-mkdir packages
+rm -rf release
+mkdir release
 
 
 build_platform "darwin-arm64" "osx" "dmg"
@@ -45,4 +51,4 @@ build_platform "windows-amd64" "windows-x64" "exe"
 build_platform "linux-x86-64" "linux-x64" "run"
 
 echo
-ls -l packages
+ls -l release

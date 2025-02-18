@@ -97,7 +97,7 @@ shutil.copyfile(resources / "LICENSE", dist / "apio" / "LICENSE")
 print("\nCompressing the package.")
 shutil.make_archive(base_name=dist / "apio", format="zip", root_dir=dist / "apio")
 
-# -- Compress the no-symlinks osx bundle
+# -- Compress the osx bundle. It's important to preserve symlinks.
 if apio_ctx.is_darwin:
     print("Compressing the osx bundle.")
     os.chdir("_dist/apio.app")
@@ -105,7 +105,7 @@ if apio_ctx.is_darwin:
     # osx_bundle_zip_fname = shutil.make_archive(
     #     base_name=dist / "apio.app", format="zip", root_dir=dist / "apio.app"
     # )
-    os.system("zip -r ../apio.app.zip .")
+    os.system("zip -r -y ../apio.app.zip .")
     os.chdir("../..")
 
 # -- Copy the package to packages directory

@@ -5,21 +5,23 @@ VER=0.9.6
 installer_file="release/apio-darwin-arm64-${VER}-native-installer.pkg"
 component_file="_work/apio-component.pkg"
 
+NAME="Apio-${VER}"
+
 # Exit on any error
 set -e
 
 rm -rf _package _dist	_work
-mkdir -p _package/Apio
+mkdir -p "_package/${NAME}"
 mkdir _work
 
 rm -f ${installer_file}
 
-pushd _package/Apio
+pushd "_package/${NAME}"
 unzip ../../../pyinstaller/release/apio-darwin-arm64-0.9.6-pyinstaller-package.zip
 popd
 
-rm _package/Apio/activate
-rm _package/Apio/README.txt
+rm "_package/${NAME}/activate"
+rm "_package/${NAME}/README.txt"
 
 echo
 # See 'man pkgbuild' for details.
