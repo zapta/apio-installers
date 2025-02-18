@@ -31,12 +31,12 @@ print(f"\nPackage name = [{NAME}]")
 
 dist:Path = Path("_dist")
 build:Path = Path("_build")
-package_file:Path = Path("release") / ("pyinstaller-" + NAME + "-package.zip")
+package_file:Path = Path("release") / (NAME + "-pyinstaller-package.zip")
 
 if apio_ctx.is_darwin:
-  OSX_BUNDLE_NAME = NAME + "-bundle"
+  OSX_BUNDLE_NAME = NAME + "-pyinstaller-bundle"
   print(f"\nOSX bundle name = [{OSX_BUNDLE_NAME}]")
-  osx_bundle_file:Path = Path("release") / ("pyinstaller-" + OSX_BUNDLE_NAME + ".zip")
+  osx_bundle_file:Path = Path("release") / (OSX_BUNDLE_NAME + ".zip")
 
 # -- Clean old build dirs.
 for path in [dist, build]:
