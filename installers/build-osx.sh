@@ -6,10 +6,17 @@ set -e
 rm -rf _package _dist	_work
 mkdir -p _package/apio
 
+rm -f MyAppComponent.pkg
+rm -f MyAppInstaller.pkg
+
 pushd _package/apio
 unzip ../../../pyinstaller/packages/pyinstaller-apio-darwin-arm64-0.9.6-package.zip
 popd
 
+rm _package/apio/activate
+rm _package/apio/README.txt
+
+echo
 # See 'man pkgbuild' for details.
 pkgbuild \
   --root "_package"\
@@ -18,4 +25,15 @@ pkgbuild \
   --version "0.9.6" \
   --scripts Scripts \
   --ownership recommended \
-  "packages/installer-apio-darwin-arm64-0.9.6.pkg"
+  "MyAppComponent.pkg"
+
+echo
+
+productbuild \
+  --resources ./resources \
+  --distribution distribution.xml \
+  --package-path MyAppComponent.pkg \
+  MyAppInstaller.pkg
+
+echo
+echo "Completed OK".
