@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "/Applications/app" > /etc/paths.d/app
+
+#echo 'export PATH="/Applications/MyApp.app/Contents/MacOS:$PATH"' >> /etc/paths.d/myapp
+#echo '/Applications/MyApp.app/Contents/MacOS/app' >> /etc/paths.d/app
+
+#!/bin/bash
+#echo 'export PATH="/Applications/app:$PATH"' >> ~/.zshrc
+#echo 'export PATH="/Applications/app:$PATH"' >> ~/.bash_profile
+#date > ~/kaka
+#pwd >> ~/kaka
+#echo "Run 'source ~/.zshrc' or 'source ~/.bash_profile' to apply changes."
+
