@@ -14,8 +14,14 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout This Repository
         uses: actions/checkout@v4
+
+      - name: Checkout Apio Repository
+        uses: actions/checkout@v4
+        with:
+          repository: "zapta/apio_dev"
+          path: apio-repo
 
       - name: Set up Python
         uses: actions/setup-python@v5
