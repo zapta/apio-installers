@@ -16,12 +16,14 @@ jobs:
     steps:
       - name: Checkout This Repository
         uses: actions/checkout@v4
+        with:
+          path: this-repo
 
       - name: Checkout Apio Repository
         uses: actions/checkout@v4
         with:
           repository: "zapta/apio_dev"
-          path: ../apio-repo
+          path: apio-repo
 
       - name: Set up Python
         uses: actions/setup-python@v5
