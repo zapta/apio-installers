@@ -36,11 +36,7 @@ jobs:
           pwd
           echo "current dir:"
           ls -la .
-          echo "parent dir:
-          ls -la ..
-          echo "parent parent dir:
-          ls -la ../..
-          pip install .
+          pip install -e apio-repo
 
       - name: Install PyInstaller
         run: |
