@@ -32,8 +32,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pwd
+          echo "current dir:"
           ls -la .
+          echo "parent dir:
           ls -la ..
+          echo "parent parent dir:
+          ls -la ../..
           pip install .
 
       - name: Install PyInstaller
