@@ -1,4 +1,4 @@
-name: Build macOS Binary
+name: build-darwin-arm64-installer
 
 on:
   push:
