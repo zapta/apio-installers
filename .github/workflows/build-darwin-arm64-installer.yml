@@ -39,7 +39,6 @@ jobs:
         run: |
           mkdir _work
           mkdir _dist
-          echo "current dir:"
           pwd
           ls -la .
 
@@ -50,10 +49,21 @@ jobs:
       - name: Run PyInstaller
         run: |
           pyinstaller --workpath _work --distpath _dist this-repo/.github/workflows/apio.spec
-          echo "_dist:"
+          pwd
           ls -al _dist
-          echo "_dist/apio:"
+          pwd
           ls -al _dist/apio
+
+      - name: Run PkgBuild
+        run: |
+          pkgbuild --root _dist \
+                   --install-location /Applications \
+                   --identifier "io.github.fpgawars.apio" \
+                   --version "0.9.6" \
+                   --ownership recommended \
+                   apio-component.pkg
+          pwd
+          ls -al
          
 
       #- name: Upload Binary Artifact
