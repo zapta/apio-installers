@@ -52,6 +52,8 @@ jobs:
           pyinstaller --workpath _work --distpath _dist this-repo/.github/workflows/apio.spec
           echo "_dist:"
           ls -al _dist
+          echo "_dist/apio:"
+          ls -al _dist/apio
          
 
       #- name: Upload Binary Artifact
